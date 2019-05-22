@@ -106,6 +106,16 @@
 	</map>
 
 	<!-- Chat -->
+	<div id="chat">
+		<template v-if="!isChatOpen">
+			<img @click="toggleChat" src="images/chat.png" alt="Chat" width="50" height="50">
+		</template>
+		<template v-else>
+			<button @click="toggleChat" class="close-btn">x</button>
+			<chat-window></chat-window>
+		</template>
+	</div>
+
 	<script src="libs/require.js"></script>
 	<script>
 	require(['js/chat'], function() {
